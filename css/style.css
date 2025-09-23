@@ -1,0 +1,274 @@
+@charset "UTF-8";
+:root {
+    --color-black: #333;
+    --color-white: #fff;
+
+    /*↓重要！*/
+    /* 1167px以上 PC固定レイアウト:  1/16 =  .0625 (1px = 0.0625rem) */
+    --fs-per: .0625;
+    /* 1167pxより狭い PCリキッドレイアウト:  1/1167*100vw =  .0856vw */
+    --fs-vw: .0856;
+}
+
+html {
+  font-size: min(var(--fs-vw)*1vw, var(--fs-per)*1rem);
+}
+body {
+  color: var(--color-black);
+  font-size: 16rem;
+  font-family: 'Noto Sans', 'Noto Sans JP', sans-serif;
+}
+a {
+  color: var(--color-black);
+  text-decoration: none;
+}
+img {
+  display: block;
+  max-width: 100%;
+}
+ul,li {
+  list-style: none;
+  margin:0;
+  padding:0;
+}
+h1{
+  font-size: 16rem;
+}
+
+@media screen and (max-width: 767.9px) {
+    :root {
+        /* 768pxより狭い SPリキッドレイアウト:  1/375*100vw= .2667vw */
+        --fs-vw: .2667;
+    }
+
+    html {
+        font-size: calc(var(--fs-vw)*1vw);
+    }
+  }
+
+.wrapper {
+  max-width: 1200rem;
+  padding: 0 16rem;
+  margin: 0 auto;
+}
+.site__ttl{
+  margin:20rem 45rem;
+}
+.navi{
+  width: 100%;
+  background:var(--color-black);
+  padding:10rem 0;
+}
+.navi__lists{
+  display: flex;
+  gap:60rem;
+}
+.navi__list a{
+  color:var(--color-white);
+  font-size:14rem;
+}
+@media screen and (max-width: 767.9px) {
+  .wrapper {
+  max-width: 100%;
+}
+.site__ttl{
+  margin:20rem;
+}
+.navi{
+  width: 100%;
+  background:var(--color-black);
+  padding:10rem 0;
+}
+.navi__lists{
+  display: flex;
+  justify-content: space-between;
+  gap:20rem;
+}
+  }
+/*pickup*/
+.pickup{
+  margin:44rem 0 65rem;
+}
+.pickup__lists{
+  display: flex;
+  justify-content: space-between;
+  gap:24rem;
+}
+.pickup__list{
+  }
+.pickup__read{
+  margin-top:7rem;
+  font-size:16rem;
+}
+.readmore{
+  display: block;
+  margin-top:19rem;
+  font-size: 14rem;
+  text-align: center;
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 767.9px) {
+.pickup{
+  margin:44rem 0 65rem;
+}
+.pickup__lists{
+  flex-direction: column;
+  gap:30rem;
+}
+.pickup__list{
+  }
+.pickup__read{
+  margin-top:7rem;
+}
+.readmore{
+  display: block;
+  margin-top:19rem;
+  font-size: 14rem;
+  text-align: center;
+  text-decoration: underline;
+}
+  }
+/*container*/
+.container{
+  display: flex;
+  justify-content: space-between;
+  gap:54rem;
+}
+.article{
+    width:64%;
+}
+.article article{
+  margin-top:75rem;
+}
+.article__ttl{
+  font-size:24rem;
+  font-weight: bold;
+}
+.meta{
+  display: flex;
+  gap:20rem;
+  margin:10rem 0;
+  font-size:14rem;
+}
+.sidebar{
+    width:29%;
+}
+.sidebar section{
+  margin-top:80rem;
+}
+.sec__ttl{
+  text-align: center;
+  margin:30rem 0;
+  font-size: 18rem;
+  font-weight: bold;
+}
+.author img{
+  width: 130rem;
+  height: 130rem;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto;
+}
+.ranking article{
+  margin-top:33rem;
+}
+.archive .archive__list{
+  border-bottom:1rem solid var(--color-black);
+  padding: 18rem;
+}
+@media screen and (max-width: 767.9px) {
+.container{
+  flex-direction: column;
+  gap:80rem;
+}
+.article{
+    width:100%;
+}
+.article article:first-child{
+  margin-top:0;
+
+}
+.article__ttl{
+  font-size:24rem;
+  font-weight: bold;
+}
+.meta{
+  display: flex;
+  gap:20rem;
+  margin:10rem 0;
+}
+.sidebar{
+    width:100%;
+}
+.sidebar section{
+  margin-top:0;
+}
+/*
+.sec__ttl{
+  text-align: center;
+  margin:30rem 0;
+  font-size: 18rem;
+  font-weight: bold;
+}
+.author img{
+  width: 130rem;
+  height: 130rem;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto;
+}
+.ranking article{
+  margin-top:33rem;
+}
+.archive .archive__list{
+  border-bottom:1rem solid var(--color-black);
+  padding: 18rem;
+}*/
+
+  }
+.footer{
+  background:#F7F7F7;
+  margin-top:140rem;
+  font-size: 14rem;
+}
+.footer .footer__contents{
+  display: flex;
+  justify-content: space-between;
+  padding:50rem 0;
+}
+.footer__ttl{
+  margin-bottom:30rem;
+  font-size:18rem;
+}
+.footer .item{
+  width: 30%;
+}
+.about__lists{
+  margin-top:38rem;
+}
+.about__list{
+  list-style: disc;
+  list-style-position: inside;
+}
+.menu__list{
+  border-bottom:1rem solid var(--color-black);
+  padding:15rem;
+}
+.sns__list{
+  padding:15rem 0;
+}
+
+@media screen and (max-width: 767.9px) {
+.footer{
+  margin-top:120rem;
+}
+.footer .footer__contents{
+  flex-direction: column;
+  padding:50rem 16rem;
+}
+.footer .item{
+  width: 100%;
+}
+}
+
