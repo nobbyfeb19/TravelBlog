@@ -1,6 +1,6 @@
 @charset "UTF-8";
 :root {
-    --color-black: #333;
+    --color-black: #000;
     --color-white: #fff;
 
     /*↓重要！*/
@@ -96,6 +96,13 @@ h1{
 }
 .pickup__list{
   }
+.pickup__list{
+    width: 31%;
+}
+.pickup__ttl{
+  font-weight: bold;
+  margin-bottom:10rem;
+}
 .pickup__read{
   margin-top:7rem;
   font-size:16rem;
@@ -116,8 +123,7 @@ h1{
   flex-direction: column;
   gap:30rem;
 }
-.pickup__list{
-  }
+
 .pickup__read{
   margin-top:7rem;
 }
@@ -145,11 +151,22 @@ h1{
   font-size:24rem;
   font-weight: bold;
 }
+.main__date{
+  font-size: 18rem;
+}
+.main__category{
+  font-size:18rem;
+}
 .meta{
   display: flex;
   gap:20rem;
   margin:10rem 0;
   font-size:14rem;
+  align-items: baseline;
+}
+.main__read{
+  margin-top:10rem;
+  font-size: 18rem;
 }
 .sidebar{
     width:29%;
@@ -162,6 +179,7 @@ h1{
   margin:30rem 0;
   font-size: 18rem;
   font-weight: bold;
+  letter-spacing: 0.1em;
 }
 .author img{
   width: 130rem;
@@ -169,9 +187,55 @@ h1{
   border-radius: 50%;
   display: block;
   margin: 0 auto;
+  box-shadow: 3px 3px 14px;
 }
 .ranking article{
   margin-top:33rem;
+  position: relative;
+}
+.ranking article:before{
+  content: "1";
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: -25rem;
+  left: -25rem;
+  width: 50rem;
+  height: 50rem;
+  border-radius: 50%;
+  background:#eb170a;
+  color:#fff;
+  z-index: 3;
+  border:2px solid #fff;
+}
+.ranking .rank-01:before{
+  content: "1";
+  }
+.ranking .rank-02:before{
+  content: "2";
+  }
+.ranking .rank-03:before{
+  content: "3";
+  }
+.crown__icon{
+  position: relative;
+}
+.crown__icon:before{
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: calc(50% - 4em);
+  transform: translate(-50%, -50%);
+  width: 50rem;
+  height: 50rem;
+  background: url(../images/crown_ico.svg);
+  background-repeat: no-repeat;
+}
+.large__txt{
+  font-size:36rem;
 }
 .archive .archive__list{
   border-bottom:1rem solid var(--color-black);
@@ -235,7 +299,7 @@ h1{
 .footer .footer__contents{
   display: flex;
   justify-content: space-between;
-  padding:50rem 0;
+  padding:50rem 16rem;
 }
 .footer__ttl{
   margin-bottom:30rem;
@@ -253,8 +317,11 @@ h1{
 }
 .menu__list{
   border-bottom:1rem solid var(--color-black);
-  padding:15rem;
 }
+.menu__list a{
+   padding:15rem;
+   display: block;
+  }
 .sns__list{
   padding:15rem 0;
 }
